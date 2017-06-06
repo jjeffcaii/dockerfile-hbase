@@ -4,13 +4,12 @@ Dockerfile for HBase on marathon.
 ## Build
 
 ``` shell
-$ docker build -t jjeffcaii/hbase:1.2.5 \
+$ docker build -t jjeffcaii/hbase:1.2 \
     --build-arg HBASE_MAJOR_VERSION=1.2 \
-    --build-arg HBASE_MINOR_VERSION=5 \
+    --build-arg HBASE_MINOR_VERSION=6 \
     --build-arg PHOENIX_VERSION=4.10.0 \
     .
 ```
-
 
 ## Deployment
 

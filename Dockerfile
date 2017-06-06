@@ -19,7 +19,7 @@ ARG APACHE_MIRROR="http://mirrors.ustc.edu.cn/apache"
 
 # set versions
 ARG HBASE_MAJOR_VERSION="1.2"
-ARG HBASE_MINOR_VERSION="5"
+ARG HBASE_MINOR_VERSION="6"
 
 RUN \
 curl -o /tmp/hbase.tar.gz  ${APACHE_MIRROR}/hbase/${HBASE_MAJOR_VERSION}.${HBASE_MINOR_VERSION}/hbase-${HBASE_MAJOR_VERSION}.${HBASE_MINOR_VERSION}-bin.tar.gz && \
@@ -32,7 +32,7 @@ rm -rf /tmp/*
 ARG PHOENIX_VERSION="4.10.0"
 
 RUN \
-curl -o /tmp/phoenix.tar.gz ${APACHE_MIRROR}/apache/phoenix/apache-phoenix-${PHOENIX_VERSION}-HBase-${HBASE_MAJOR_VERSION}/bin/apache-phoenix-${PHOENIX_VERSION}-HBase-${HBASE_MAJOR_VERSION}-bin.tar.gz && \
+curl -o /tmp/phoenix.tar.gz ${APACHE_MIRROR}/phoenix/apache-phoenix-${PHOENIX_VERSION}-HBase-${HBASE_MAJOR_VERSION}/bin/apache-phoenix-${PHOENIX_VERSION}-HBase-${HBASE_MAJOR_VERSION}-bin.tar.gz && \
 tar xvzf /tmp/phoenix.tar.gz -C /tmp && \
 rm -f /tmp/phoenix.tar.gz && \
 mv /tmp/*phoenix* /tmp/phoenix && \
