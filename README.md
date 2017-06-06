@@ -22,7 +22,7 @@ Here are some marathon json files.
       "image": "jjeffcaii/hbase:1.2",
       "forcePullImage": true
     }
-  }
+  },
   "portDefinitions": [
     {
       "port": 0,
@@ -58,7 +58,7 @@ Here are some marathon json files.
       "image": "jjeffcaii/hbase:1.2",
       "forcePullImage": true
     }
-  }
+  },
   "portDefinitions": [
     {
       "port": 0,
