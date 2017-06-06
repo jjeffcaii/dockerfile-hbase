@@ -1,16 +1,13 @@
 # dockerfile-hbase
----------------------------------------
 Dockerfile for HBase on marathon.
 
 ## Deployment
-----------------------------
 
 **You must mount `hdfs-site.xml`,`core-site.xml` at `/etc/hadoop`.**
 
 Here are some marathon json files.
 
 ### Master
---------------------------------
 
 ``` json
 {
@@ -47,7 +44,6 @@ Here are some marathon json files.
 ```
 
 ### Backup Master
---------------------------------
 
 ``` json
 {
@@ -84,7 +80,6 @@ Here are some marathon json files.
 ```
 
 ### Region Server
--------------------------------------
 
 ``` json
 {
@@ -121,7 +116,6 @@ Here are some marathon json files.
 ```
 
 ### Thrift2 Server (Optional)
------------------------------------
 
 ``` json
 {
@@ -160,7 +154,6 @@ Here are some marathon json files.
 
 
 ## FAQ
------------------------
 
 - Q: How to graceful stop a regionserver?
 
