@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>zookeeper.session.timeout</name>
+        <value>60000</value>
+    </property>
+    <property>
+        <name>hbase.zookeeper.property.tickTime</name>
+        <value>6000</value>
+    </property>
+    <property>
+        <name>hbase.hlog.split.skip.errors</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>phoenix.schema.isNamespaceMappingEnabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>phoenix.schema.mapSystemTablesToNamespace</name>
+        <value>true</value>
+    </property>
+
+    <!-- phoenix secondary indexing -->
+    <property>
+        <name>hbase.regionserver.wal.codec</name>
+        <value>org.apache.hadoop.hbase.regionserver.wal.IndexedWALEditCodec</value>
+    </property>
+    <property>
+        <name>hbase.region.server.rpc.scheduler.factory.class</name>
+        <value>org.apache.hadoop.hbase.ipc.PhoenixRpcSchedulerFactory</value>
+    </property>
+    <property>
+        <name>hbase.rpc.controllerfactory.class</name>
+        <value>org.apache.hadoop.hbase.ipc.controller.ServerRpcControllerFactory</value>
+    </property>
+
+    <!-- /////// 以下为优化参数 /////// -->
+
+    <!-- 开启磁盘二级缓存 -->
+    <!--
+        <property>
+        <name>hbase.bucketcache.ioengine</name>
+        <value>file:/var/run/hbase-bucketcache</value>
+        </property>
+        <property>
+        <name>hbase.bucketcache.size</name>
+        <value>10240</value>
+        </property>
+    -->
+
+    <property>
+        <name>hbase.regionserver.global.memstore.size</name>
+        <value>0.4</value>
+    </property>
+    <property>
+        <name>hbase.hstore.compactionThreshold</name>
+        <value>5</value>
+    </property>
+    <property>
+        <name>hbase.hstore.blockingStoreFiles</name>
+        <value>10</value>
+    </property>
+
+    <!--
+        <property>
+        <name>hbase.hregion.memstore.flush.size</name>
+        <value>67108864</value>
+        </property>
+    -->
+
+    <property>
+        <name>hfile.block.cache.size</name>
+        <value>0.1</value>
+    </property>
+    <!-- 启用堆外二级缓存 -->
+    <property>
+        <name>hbase.bucketcache.ioengine</name>
+        <value>offheap</value>
+    </property>
+    <property>
+        <name>hbase.bucketcache.size</name>
+        <value>0.3</value>
+    </property>
+
+    <!-- 禁止major_compaction -->
+    <!--
+        <property>
+        <name>hbase.hregion.majorcompaction</name>
+        <value>0</value>
+        </property>
+    -->
+    <!-- 禁止split -->
+    <!--
+        <property>
+        <name>hbase.hregion.max.filesize</name>
+        <value>536870912000</value>
+        </property>
+    -->
+    <!-- 禁止blocking -->
+    <!--
+        <property>
+        <name>hbase.hstore.blockingStoreFiles</name>
+        <value>2100000000</value>
+        </property>
+    -->
+</configuration>
