@@ -1,6 +1,17 @@
 # dockerfile-hbase
 Dockerfile for HBase on marathon.
 
+## Build
+
+``` shell
+$ docker build -t jjeffcaii/hbase:1.2.5 \
+    --build-arg HBASE_MAJOR_VERSION=1.2 \
+    --build-arg HBASE_MINOR_VERSION=5 \
+    --build-arg PHOENIX_VERSION=4.10.0 \
+    .
+```
+
+
 ## Deployment
 
 **You must mount `hdfs-site.xml`,`core-site.xml` at `/etc/hadoop`.**
